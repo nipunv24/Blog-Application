@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Post</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="newPostPage">
+    <form action="/post/createnew" method="POST">
+        <div class="titleANDcontent">
+            <input type="text" name="title" placeholder="Title" required>
+            <textarea name="content" placeholder="Content" required></textarea> 
+        </div>
+        <!-- textarea is used to create multiline input fields. -->
+         <div class="SavePostButton">
+            <button type="submit">Create Post</button>
+         </div>
+    </form>
+    <a href="/" class="HomeLink">Back to Home</a>
+</body>
+</html>

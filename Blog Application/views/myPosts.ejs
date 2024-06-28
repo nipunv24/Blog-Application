@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <% if(posts.length==0){ %>
+        <h1>You have not created any post still!</h1>
+        <a href="/">Back to Home</a>
+        <a href="/post/new">Create New Post</a>
+    <% } else{ %>
+    <ul>
+            <% posts.forEach(post => { %>
+                <li>
+                    <h1><%= post.title %></h1>
+                    <p><%= post.content %></p>
+
+                 <div class="actionButtons">
+                    <form action="/post/<%= post.id%>/edit" method="GET"> 
+                        <button type="submit">Edit</button>
+                    </form>
+                    <form action="/post/<%= post.id %>/delete" method="POST" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                 </div>
+                </li>  
+            <% }); %>
+    </ul>
+
+
+        <div class="MyPostsLinks" id="MyPostsLinks1">
+            <a href="/">Back to Home</a>
+        </div>
+        <div class="MyPostsLinks" id="MyPostsLinks2">
+            <a href="/post/new">Create New Post</a>
+        </div>
+    <% } %>
+</body>
+</html>
